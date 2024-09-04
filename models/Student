@@ -1,0 +1,30 @@
+const mongoose = require('mongoose');
+
+
+
+//Define the person schema
+const studentSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    age: {
+        type  : Number,
+        required: true
+
+    },
+    class: {
+        type: String,
+        required: true
+    },
+    rollnumber: {
+        type: String,
+        unique: true,
+        required: true
+    }
+
+});
+
+//export the model
+const student = mongoose.model( 'student',studentSchema);
+module.exports = student;
